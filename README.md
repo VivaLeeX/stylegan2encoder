@@ -1,4 +1,22 @@
 ## StyleGAN2 &mdash; Encoder/Projector for Official TensorFlow Implementation
+Add the steps to make it work for the Google COLab
+
+`!pip uninstall tensorflow`
+
+`!pip install tensorflow==1.14`
+
+`!pip install tensorflow-gpu==1.14`
+
+`!pip install keras==2.2.5`
+
+`!mkdir raw_images`
+
+`!mkdir aligned_images`
+
+Upload some raw picture to the folder of raw_images, then we can let the network to process it.
+`python project_images.py aligned_images/ generated_images/`
+
+## StyleGAN2 &mdash; Encoder/Projector for Official TensorFlow Implementation
 ![Python 3.6](https://img.shields.io/badge/python-3.6-green.svg?style=plastic)
 ![TensorFlow 1.10](https://img.shields.io/badge/tensorflow-1.10-green.svg?style=plastic)
 ![cuDNN 7.3.1](https://img.shields.io/badge/cudnn-7.3.1-green.svg?style=plastic)
