@@ -1,6 +1,7 @@
 ## StyleGAN2 &mdash; Encoder/Projector for Official TensorFlow Implementation
 Add the steps to make it work for the Google COLab
 
+### prepare the environment
 `!pip uninstall tensorflow`
 
 `!pip install tensorflow==1.14`
@@ -13,8 +14,21 @@ Add the steps to make it work for the Google COLab
 
 `!mkdir aligned_images`
 
-Upload some raw picture to the folder of raw_images, then we can let the network to process it.
-`python project_images.py aligned_images/ generated_images/`
+### Clone the file and move them to root folder
+`!git clone https://github.com/VivaLeeX/stylegan2encoder`
+
+`!mv ./stylegan2encoder/* . `
+
+### Upload some jpg file to raw_images folder, Select and Resize the file from raw_images
+`!python align_images.py raw_images/ aligned_images/`
+
+### Genretae the image with network according the input, and output video as well.
+You may hit the error (Google Drive download quota exceeded) for below script, pls download the file https://drive.google.com/uc?id=1N2-m9qszOeVC9Tq77WxsLnuWwOedQiD2, then upload the file vgg16_zhang_perceptual.pkl to root folder, and update the file project_images.py (change the URL previously to ./vgg16_zhang_perceptual.pkl) accordingly.
+
+`!python project_images.py aligned_images/ generated_images/ --video VIDEO`
+
+### encode the resized file, and encode it as latent code
+`!python encode_images.py aligned_images/ generated_imagesEncode/ latent_representations/`
 
 ## StyleGAN2 &mdash; Encoder/Projector for Official TensorFlow Implementation
 ![Python 3.6](https://img.shields.io/badge/python-3.6-green.svg?style=plastic)
